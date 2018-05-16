@@ -1,10 +1,9 @@
 <?php
 
 public class PDOConnection{
-
-	$config = parse_ini_file('config/config.ini');
-
-	public function getConnection(){
+	
+	public static function getConnection(){
+		$config = parse_ini_file('config/config.ini');
 		try{
 			$conn = new PDO("host =".$config['host']." dbname=".$config['dbnome']." user =".$config['username']." pass =".$config['password']." ");
 
